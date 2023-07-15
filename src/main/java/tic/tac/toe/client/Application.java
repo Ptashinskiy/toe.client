@@ -34,16 +34,11 @@ public class Application {
 
 		String input = "input";
 		while (!input.equals("exit")) {
-			MakeMoveRequest request = new MakeMoveRequest();
-			request.setGameId(gameId);
-			System.out.println("Enter the letter coordinate: ");
+			System.out.println("Enter coordinates as A1, B2 etc: ");
 			input = new Scanner(System.in).nextLine();
-			request.setLetterCoordinate(input);
-			System.out.println("Enter the number coordinate: ");
-			input = new Scanner(System.in).nextLine();
-			request.setNumberCoordinate(input);
 			gameSession.subscribe("/game2/games/" + gameId, gameHandler);
-			gameSession.send("/game/make-move", request);
+			gameSession.subscribe("/game2/games/" + gameId + "/exceptions", healthHandler);
+			gameSession.send("/game/make-move", new MakeMoveRequest(gameId, input));
 		}
 	}
 

@@ -1,13 +1,13 @@
 package tic.tac.toe.client.dto;
 
-public class HealthMessage {
+public class Message {
 
     private String message;
 
-    public HealthMessage() {
+    public Message() {
     }
 
-    public HealthMessage(String message) {
+    public Message(String message) {
         this.message = message;
     }
 

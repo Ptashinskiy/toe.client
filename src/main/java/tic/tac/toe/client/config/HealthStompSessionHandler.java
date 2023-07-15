@@ -4,7 +4,7 @@ import org.springframework.messaging.simp.stomp.StompCommand;
 import org.springframework.messaging.simp.stomp.StompHeaders;
 import org.springframework.messaging.simp.stomp.StompSession;
 import org.springframework.messaging.simp.stomp.StompSessionHandler;
-import tic.tac.toe.client.dto.HealthMessage;
+import tic.tac.toe.client.dto.Message;
 
 import java.lang.reflect.Type;
 
@@ -26,12 +26,12 @@ public class HealthStompSessionHandler implements StompSessionHandler {
 
     @Override
     public Type getPayloadType(StompHeaders headers) {
-        return HealthMessage.class;
+        return Message.class;
     }
 
     @Override
     public void handleFrame(StompHeaders headers, Object payload) {
-        HealthMessage healthMessage = (HealthMessage) payload;
-        System.out.println(healthMessage.getMessage());
+        Message message = (Message) payload;
+        System.out.println(message.getMessage());
     }
 }

@@ -4,17 +4,14 @@ public class MakeMoveRequest {
 
     private String gameId;
 
-    private String numberCoordinate;
-
-    private String letterCoordinate;
+    private String coordinates;
 
     public MakeMoveRequest() {
     }
 
-    public MakeMoveRequest(String gameId, String numberCoordinate, String letterCoordinate) {
+    public MakeMoveRequest(String gameId, String coordinates) {
         this.gameId = gameId;
-        this.numberCoordinate = numberCoordinate;
-        this.letterCoordinate = letterCoordinate;
+        this.coordinates = coordinates;
     }
 
     public String getGameId() {
@@ -25,19 +22,11 @@ public class MakeMoveRequest {
         this.gameId = gameId;
     }
 
-    public String getNumberCoordinate() {
-        return numberCoordinate;
+    public String getCoordinates() {
+        return coordinates;
     }
 
-    public void setNumberCoordinate(String numberCoordinate) {
-        this.numberCoordinate = numberCoordinate;
-    }
-
-    public String getLetterCoordinate() {
-        return letterCoordinate;
-    }
-
-    public void setLetterCoordinate(String letterCoordinate) {
-        this.letterCoordinate = letterCoordinate;
+    public void setCoordinates(String coordinates) {
+        this.coordinates = coordinates;
     }
 }
